@@ -11,13 +11,15 @@ describe Card do
 end
 
 describe Deck do
+  before do
+    @deck = Deck.new
+  end
+
   it 'has 52 cards' do
-    deck = Deck.new
-    deck.size.must_equal 52
+    @deck.size.must_equal 52
   end
   it 'will contain 51 cards after dealing a card' do
-    deck = Deck.new
-    deck.deal!
-    deck.size.must_equal 51
+    @deck.deal!
+    @deck.size.must_equal 51
   end
 end
